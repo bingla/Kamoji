@@ -15,5 +15,10 @@ namespace Kamoji.Services
         {
             return KamojiHelper.Negative(type);
         }
+
+        public string Neutral(eNeutral type)
+        {
+            return KamojiHelper.Neutral(type);
+        }
     }
 }

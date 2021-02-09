@@ -14,6 +14,12 @@ namespace Kamoji.Internals
         Pain
     }
 
+    public enum eNeutral
+    {
+        Indifference,
+        Confusion
+    }
+
     public static class Emoji
     {
         public static readonly Dictionary<ePositive, List<string>> Positive = new Dictionary<ePositive, List<string>>
@@ -33,6 +39,16 @@ namespace Kamoji.Internals
             }},
             { eNegative.Pain, new List<string> {
                 "~(>_<~)", "☆⌒(> _ <)"
+            }},
+        };
+
+        public static readonly Dictionary<eNeutral, List<string>> Neutral = new Dictionary<eNeutral, List<string>>
+        {
+            { eNeutral.Confusion, new List<string> {
+                "(￣ω￣;)", "σ(￣、￣〃)"
+            }},
+            { eNeutral.Indifference, new List<string> {
+                "ヽ(ー_ー )ノ", "ヽ(´ー` )┌"
             }},
         };
     }

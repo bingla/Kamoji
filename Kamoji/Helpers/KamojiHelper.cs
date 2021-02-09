@@ -20,5 +20,13 @@ namespace Kamoji.Helpers
                 ? list[rand.Next(list.Count)]
                 : string.Empty;
         }
+
+        public static string Neutral(eNeutral type)
+        {
+            var rand = new Random();
+            return Emoji.Neutral.TryGetValue(type, out var list)
+                ? list[rand.Next(list.Count)]
+                : string.Empty;
+        }
     }
 }
