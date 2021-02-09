@@ -22,8 +22,10 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Build package
-      run: dotnet pack --configuration Release
+      run: |  
+          cd <project>
+          dotnet pack --configuration Release -o out
     - name: Publish package
-      run: dotnet nuget push "bin/Release/Kamoji.0.0.1.nupkg" -k ${GITHUB_TOKEN} --source "https://nuget.pkg.github.com/bingla/index.json" --skip-duplicate 
+      run: dotnet nuget push ./<project>/out/*.nupkg -k ${GITHUB_TOKEN} --source "https://nuget.pkg.github.com/bingla/index.json" --skip-duplicate 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
