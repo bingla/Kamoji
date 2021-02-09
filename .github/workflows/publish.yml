@@ -22,7 +22,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Build package
-      run: |  
+      run: |
           cd <project>
           dotnet pack --configuration Release -o out
     - name: Publish package
