@@ -28,5 +28,29 @@ namespace Kamoji.Helpers
                 ? list[rand.Next(list.Count)]
                 : string.Empty;
         }
+
+        public static string Various(eVarious type)
+        {
+            var rand = new Random();
+            return Emoji.Various.TryGetValue(type, out var list)
+                ? list[rand.Next(list.Count)]
+                : string.Empty;
+        }
+
+        public static string Animals(eAnimals type)
+        {
+            var rand = new Random();
+            return Emoji.Animals.TryGetValue(type, out var list)
+                ? list[rand.Next(list.Count)]
+                : string.Empty;
+        }
+
+        public static string Other(eOther type)
+        {
+            var rand = new Random();
+            return Emoji.Other.TryGetValue(type, out var list)
+                ? list[rand.Next(list.Count)]
+                : string.Empty;
+        }
     }
 }
