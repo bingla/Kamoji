@@ -1,4 +1,4 @@
-name: Build and Publish Pacakge.NET
+name: Build and Publish Package
 
 on:
   push:
