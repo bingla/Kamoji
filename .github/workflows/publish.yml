@@ -21,3 +21,7 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Build package
+      run: dotnet pack --configuration Release
+    - name: Publish package
+      run: dotnet nuget push "bin/Release/Kamoji.0.0.1.nupkg" --source "github"
