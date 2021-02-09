@@ -73,7 +73,7 @@ namespace Kamoji.Internals
                 "(* ^ ω ^)", "(´ ∀ ` *)",
             }},
             { ePositive.Love, new List<string> {
-                "(ﾉ´ з `)ノ", "(♡μ_μ)",
+                "(ﾉ´ з `)ノ", "(♡μ_μ)", "(❤ω❤)"
             }}
         };
 
