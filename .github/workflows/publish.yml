@@ -24,6 +24,6 @@ jobs:
     - name: Build package
       run: dotnet pack --configuration Release
     - name: Publish package
-      run: dotnet nuget push "bin/Release/Kamoji.0.0.1.nupkg" -k ${GITHUB_TOKEN} --skip-duplicate --no-symbols
+      run: dotnet nuget push "bin/Release/Kamoji.0.0.1.nupkg" -k ${GITHUB_TOKEN} --skip-duplicate
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
