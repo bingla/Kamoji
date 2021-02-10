@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard1.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Description>This package returns a random japanese emoji in the Kamoji style.</Description>
+    <Description>This package returns a random japanese kamoji-style emoji.</Description>
     <Version>0.0.2</Version>
     <Authors>Pierre Nilsson</Authors>
     <Company>Pierre Nilsson</Company>

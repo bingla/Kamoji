@@ -1,17 +1,16 @@
-name: Build, Test and Publish Package
+name: Build and Test 
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
   pull_request:
-    branches: [ master ]
+    branches: [ develop ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
       CONFIG: 'Release'
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v2
       
@@ -23,15 +22,8 @@ jobs:
     - name: Restore Dependencies
       run: dotnet restore
     
-    - name: Build Project
+    - name: Build
       run: dotnet build --configuration $CONFIG --no-restore
       
-    - name: Run Tests
+    - name: Test
       run: dotnet test --configuration $CONFIG --no-restore --no-build --verbosity normal
-      
-    - name: Build Nuget Package
-      run: dotnet pack --configuration $CONFIG -o out
-      
-    - name: Publish package
-      run: dotnet nuget push "out/*.nupkg" -k $GITHUB_TOKEN --source "https://nuget.pkg.github.com/bingla/index.json" --skip-duplicate 
-        
