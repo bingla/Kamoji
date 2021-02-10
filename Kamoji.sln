@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kamoji", "Kamoji\Kamoji.csproj", "{3E14D1DB-8E16-47FD-9E30-E1FAE7803201}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kamoji.Test", "Kamoji.Test\Kamoji.Test.csproj", "{4FB01B68-F8CE-4A93-B838-5959F5B5A6B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kamoji.Test", "Kamoji.Test\Kamoji.Test.csproj", "{FC8F0E7F-084A-4698-9A64-EE647223DDF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{3E14D1DB-8E16-47FD-9E30-E1FAE7803201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E14D1DB-8E16-47FD-9E30-E1FAE7803201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E14D1DB-8E16-47FD-9E30-E1FAE7803201}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4FB01B68-F8CE-4A93-B838-5959F5B5A6B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4FB01B68-F8CE-4A93-B838-5959F5B5A6B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4FB01B68-F8CE-4A93-B838-5959F5B5A6B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4FB01B68-F8CE-4A93-B838-5959F5B5A6B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC8F0E7F-084A-4698-9A64-EE647223DDF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC8F0E7F-084A-4698-9A64-EE647223DDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC8F0E7F-084A-4698-9A64-EE647223DDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC8F0E7F-084A-4698-9A64-EE647223DDF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
