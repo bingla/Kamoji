@@ -2,9 +2,9 @@ name: Build and Test
 
 on:
   push:
-    branches: [ develop, master ]
+    branches: [ develop ]
   pull_request:
-    branches: [ develop, master ]
+    branches: [ develop ]
 
 jobs:
   build:
@@ -25,11 +25,9 @@ jobs:
       
     - name: Restore Nugets from solution 
       run: nuget restore Kamoji.sln
-
-    - name: Restore dependencies
-      run: dotnet restore
       
     - name: Build
       run: dotnet build --configuration Release
+      
     - name: Test
       run: dotnet test --no-build --verbosity normal
