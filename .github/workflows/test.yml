@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      config: 'Release'
+      CONFIG: 'Release'
     steps:
     - uses: actions/checkout@v2
       
@@ -23,7 +23,7 @@ jobs:
       run: dotnet restore
     
     - name: Build
-      run: dotnet build --configuration $config --no-restore
+      run: dotnet build --configuration $CONFIG --no-restore
       
     - name: Test
-      run: dotnet test --configuration $config --no-build --no-restore --verbosity normal
+      run: dotnet test --configuration $CONFIG --no-restore --no-build --verbosity normal

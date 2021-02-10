@@ -9,26 +9,29 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CONFIG: 'Release'
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v2
+      
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-        
+      with: 
+        dotnet-version: 3.1.x
+      
     - name: Restore Dependencies
       run: dotnet restore
+    
+    - name: Build Project
+      run: dotnet build --configuration $CONFIG --no-restore
       
-    - name: Build
-      run: dotnet build --configuration Release
-      
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: Run Tests
+      run: dotnet test --configuration $CONFIG --no-restore --no-build --verbosity normal
       
     - name: Build Nuget Package
-      run: dotnet pack --configuration Release -o out
+      run: dotnet pack --configuration $CONFIG -o out
       
     - name: Publish package
-      run: dotnet nuget push "out/*.nupkg" -k ${GITHUB_TOKEN} --source "https://nuget.pkg.github.com/bingla/index.json" --skip-duplicate 
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: dotnet nuget push "out/*.nupkg" -k $GITHUB_TOKEN --source "https://nuget.pkg.github.com/bingla/index.json" --skip-duplicate 
+        
