@@ -19,7 +19,10 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
       
+    - name: Build Nuget Package
+      run: dotnet pack --configuration Release -o out
+      
     - name: Publish package
-      run: dotnet nuget push "out/*.nupkg" -k ${GITHUB_TOKEN} --source "https://nuget.pkg.github.com/bingla/index.json" --skip-duplicate 
+      run: dotnet nuget push "out/*.nupkg" -k ${GITHUB_TOKEN} --source "https://nuget.pkg.github.com/bingla/index.json" --skip-duplicate
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
