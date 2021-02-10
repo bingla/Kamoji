@@ -1,23 +1,23 @@
-﻿using Kamoji.Interfaces;
+using Kamoji.Interfaces;
 using Kamoji.Internals;
 using Kamoji.Services;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using NUnit.Framework;
 
 namespace Kamoji.Test
 {
-    [TestClass]
-    public class KamojiTest
+    public class Tests
     {
-        private readonly Mock<IRandomizer> _randomizer;
+        private Mock<IRandomizer> _randomizer;
 
-        public KamojiTest()
+        [SetUp]
+        public void Setup()
         {
             _randomizer = new Mock<IRandomizer>();
             _randomizer.Setup(r => r.Next(0)).Returns(0);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldReturnPositiveCategory()
         {
             IKamojiService kamoji = new KamojiService(_randomizer.Object);
@@ -31,9 +31,10 @@ namespace Kamoji.Test
             Assert.AreEqual(Emoji.Positive[ePositive.Joy][0], joy);
             Assert.AreEqual(Emoji.Positive[ePositive.Love][0], love);
             Assert.AreEqual(Emoji.Positive[ePositive.Sympathy][0], sympathy);
+
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldReturnNegativeCategory()
         {
             IKamojiService kamoji = new KamojiService(_randomizer.Object);
