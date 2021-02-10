@@ -23,12 +23,13 @@ jobs:
         # NuGet version to install. Can be `latest`, `preview`, a concrete version like `5.3.1`, or a semver range specifier like `5.x`.
         nuget-version: latest
       
-    - name: Restore Nuget
+    - name: Restore Nugets from solution 
       run: nuget restore Kamoji.sln
 
     - name: Restore dependencies
       run: dotnet restore
+      
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --configuration Release
     - name: Test
       run: dotnet test --no-build --verbosity normal
