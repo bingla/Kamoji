@@ -1,4 +1,4 @@
-name: Build, Test and Publish Package
+name: Build, Test and Publish
 
 on:
   push:
