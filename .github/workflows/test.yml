@@ -19,6 +19,9 @@ jobs:
       with: 
         dotnet-version: 3.1.x
       
+    - name: Set stuff
+      run: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+      
     - name: Restore Dependencies
       run: dotnet restore
     
