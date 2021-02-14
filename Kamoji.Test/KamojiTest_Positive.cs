@@ -26,7 +26,6 @@ namespace Kamoji.Test
             var love = kamoji.Positive(ePositive.Love);
             var sympathy = kamoji.Positive(ePositive.Sympathy);
 
-
             Assert.Equal(Emoji.Positive[ePositive.Embarrassement][0], embarrassement);
             Assert.Equal(Emoji.Positive[ePositive.Joy][0], joy);
             Assert.Equal(Emoji.Positive[ePositive.Love][0], love);
