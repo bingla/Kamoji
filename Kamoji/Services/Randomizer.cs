@@ -1,7 +1,5 @@
 ﻿using Kamoji.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Kamoji.Services
 {
@@ -11,9 +9,9 @@ namespace Kamoji.Services
         public Randomizer()
         { }
 
-        public int Next(int maxValue = int.MaxValue)
+        public int Next(int maxValue)
         {
-            return _rand.Next(maxValue);
+            return _rand.Next(maxValue < 0 ? 0 : maxValue - 1);
         }
     }
 }
